@@ -106,7 +106,7 @@ export const resolvers = {
       let vehicles = await context.vehiclesCollection.find({  }).toArray();
 
       vehicles = vehicles.filter(vehicle => vehicle.year >= startYear && vehicle.year <= endYear);
-      console.log(vehicles);
+
       return Promise.all(
         vehicles.map(async (vehicle) => ({
           ...vehicle,
